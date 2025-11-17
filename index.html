@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CIGAR.MC — Maison de cigares de Monaco</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <meta name="description" content="CIGAR.MC — Sélection exclusive de cigares et accessoires de Monaco. Élégance, tradition et service privé." />
+  <style>
+    :root{
+      --bg:#070606;
+      --gold:#d4af37;
+      --muted:#bfb6a6;
+      --card:#0f0e0e;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: 'Inter', sans-serif;
+      background:radial-gradient(1200px 600px at 10% 10%, rgba(212,175,55,0.04), transparent), var(--bg);
+      color:#eee;
+    }
+    header{
+      display:flex;justify-content:space-between;align-items:center;
+      padding:28px 48px;
+    }
+    .brand{display:flex;align-items:center;gap:14px}
+    .logo{
+      width:58px;height:58px;border-radius:8px;
+      background:linear-gradient(135deg,#1b1a1a,#0d0c0c);
+      display:flex;align-items:center;justify-content:center;
+    }
+    .title{
+      font-family:'Playfair Display',serif;
+      font-weight:700;color:var(--gold);letter-spacing:2px;
+    }
+    nav a{color:var(--muted);text-decoration:none;margin-left:20px;font-weight:600}
+    nav a.cta{
+      color:var(--bg);background:var(--gold);padding:10px 14px;border-radius:8px;
+    }
+
+    .hero{
+      display:grid;grid-template-columns:1fr 420px;gap:48px;
+      max-width:1200px;margin:40px auto;padding:48px;
+    }
+    h1{
+      font-family:'Playfair Display',serif;font-size:48px;color:var(--gold);
+    }
+    p.lead{color:var(--muted);font-size:16px;max-width:60%}
+
+    .card{
+      background:var(--card);padding:22px;border-radius:12px;
+      border:1px solid rgba(255,255,255,0.05);
+    }
+    .product .name{font-weight:700}
+    .product .desc{color:var(--muted);font-size:14px}
+    .actions{display:flex;gap:12px;margin-top:12px}
+    .btn{padding:10px 14px;border-radius:10px;font-weight:600;border:0;cursor:pointer}
+    .btn.primary{
+      background:linear-gradient(90deg,var(--gold), #f0d27a);
+      color:var(--bg);
+    }
+    .btn.ghost{
+      background:transparent;color:var(--gold);
+      border:1px solid rgba(212,175,55,0.3);
+    }
+
+    footer{
+      max-width:1200px;margin:40px auto;
+      padding:18px 48px;color:var(--muted);
+      display:flex;justify-content:space-between;
+    }
+
+    @media(max-width:900px){
+      .hero{grid-template-columns:1fr}
+      h1{font-size:34px}
+      p.lead{max-width:100%}
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="brand">
+    <div class="logo">
+      <svg viewBox="0 0 24 24" width="34" height="34" fill="none">
+        <path d="M2 12h13v4H2z" fill="#B08B3B"/>
+        <path d="M19 8c1.657 0 3 1.343 3 3s-1.343 3-3 3" stroke="#D4AF37" stroke-width="1.2"/>
+      </svg>
+    </div>
+    <div>
+      <div class="title">CIGAR.MC</div>
+      <div style="font-size:12px;color:var(--muted)">Maison | Sélection | Monaco</div>
+    </div>
+  </div>
+
+  <nav>
+    <a href="#collection">Collection</a>
+    <a href="#services">Services</a>
+    <a class="cta" href="#contact">Contact privé</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+
+    <div class="card">
+      <h1>Art du cigare — Sélection privée</h1>
+      <p class="lead">CIGAR.MC propose une collection triée sur le volet de cigares rares, accessoires de haute facture et un service de conseil privé pour les connaisseurs de Monaco.</p>
+
+      <div style="display:flex;gap:18px;flex-wrap:wrap;margin-top:20px">
+        <div class="card product" style="min-width:220px">
+          <div class="name">Reserva Real ∘ Toro</div>
+          <div class="desc">Arômes profonds, notes de cacao.</div>
+          <div class="actions">
+            <button class="btn primary">Découvrir</button>
+            <button class="btn ghost">Prix</button>
+          </div>
+        </div>
+
+        <div class="card product" style="min-width:220px">
+          <div class="name">Édition Monaco ∘ Limitée</div>
+          <div class="desc">Boîte numérotée — livraison discrète.</div>
+          <div class="actions">
+            <button class="btn primary">Réserver</button>
+            <button class="btn ghost">Détails</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <aside>
+      <div class="card" style="padding:0;overflow:hidden">
+        <img src="/assets/hero-cigar.jpg" alt="Cigare premium" style="width:100%;border-radius:12px">
+      </div>
+    </aside>
+
+  </section>
+</main>
+
+<footer>
+  <div>© CIGAR.MC — Tous droits réservés</div>
+  <div>Contact : <a href="mailto:hello@cigar.mc" style="color:var(--gold)">hello@cigar.mc</a></div>
+</footer>
+
+<script>
+  document.querySelectorAll('.btn.primary').forEach(btn=>{
+    btn.onclick = ()=>alert('Merci — nous vous contacterons.');
+  });
+</script>
+
+</body>
+</html>
